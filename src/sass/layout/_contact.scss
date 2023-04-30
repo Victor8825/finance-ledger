@@ -1,0 +1,166 @@
+.contact {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-background {
+  min-height: 220px;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url('../images/home/contact.jpg');
+
+  // background-image:
+  //   -webkit-image-set(url('../images/home/people@2x.webp') type('image/webp')
+  //         2x, url('../images/home/people.webp') type('image/webp') 1x, url('../images/home/people@2x.jpg')
+  //         2x, url('../images/home/people.jpg') 1x);
+
+  // background-image:
+  //   image-set(
+  //     url('../images/home/people@2x.webp') type('image/webp') 2x,
+  //     url('../images/home/people.webp') type('image/webp') 1x,
+  //     url('../images/home/people@2x.jpg') 2x,
+  //     url('../images/home/people.jpg') 1x
+  //   );
+
+  @include tablet {
+    // height: auto;
+    min-height: 354px;
+
+    // background-size: contain;
+  }
+
+  @include desktop {
+    min-height: 454px;
+  }
+}
+
+.contact__form-wrap {
+  padding-top: 51px;
+  padding-bottom: 25px;
+  background-color: getColor('grey-background');
+
+  h2 {
+    margin: 0;
+  }
+
+  @include tablet {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @include desktop {
+    padding-top: 56px;
+    padding-bottom: 77px;
+  }
+}
+
+.contact-form {
+  width: 100%;
+
+  h2 {
+    margin-bottom: 69px;
+    text-align: center;
+  }
+
+  @include tablet {
+    h2 {
+      text-align: unset;
+      margin-bottom: 24px;
+    }
+  }
+
+  @include desktop {
+    h2 {
+      margin-bottom: 31px;
+    }
+  }
+}
+
+// .input--active {
+//   top: -25px;
+// }
+
+.contact-form__btn {
+  width: 155px;
+  margin-top: 24px;
+  background-color: getColor('green');
+  color: getColor('white');
+  transition: all $trans-time $cubic;
+
+  @include desktop {
+    margin-top: 40px;
+  }
+}
+
+.contact-form__btn:hover,
+.contact-form__btn:focus {
+  filter: brightness(85%);
+}
+
+.input-holder {
+  position: relative;
+  width: 100%;
+
+  label {
+    position: absolute;
+    top: 16px;
+    left: 8px;
+    cursor: text;
+    color: getColor('grey');
+    transition: all $trans-time $cubic;
+  }
+
+  input {
+    display: block;
+    width: inherit;
+    outline: 1px solid transparent;
+    transition: outline $trans-time $cubic;
+  }
+
+  input:hover,
+  input:focus {
+    outline: 1px solid getColor('grey');
+  }
+
+  input:focus + label {
+    top: -25px;
+    color: getColor('grey');
+    // font-size: 12px;
+    pointer-events: none;
+  }
+
+  @include tablet {
+    label,
+    input {
+      width: inherit;
+      max-width: 336px;
+    }
+  }
+
+  @include desktop {
+    label,
+    input {
+      max-width: 642px;
+    }
+  }
+}
+.contact-form > .input-holder:not(:first-child) {
+  margin-top: 32px;
+}
+
+.warning {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  display: none;
+  color: getColor('red');
+
+  svg {
+    fill: getColor('red');
+    align-self: self-end;
+  }
+}

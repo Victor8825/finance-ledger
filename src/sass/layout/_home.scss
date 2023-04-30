@@ -1,0 +1,183 @@
+.home {
+  height: 533px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('../images/home/showcase@2x.jpg');
+
+  // background-image: linear-gradient(
+  //     0deg,
+  //     rgba(0, 0, 0, 0.4),
+  //     rgba(0, 0, 0, 0.4)
+  //   ),
+  //   -webkit-image-set(url('../images/home/showcase@2x.webp') type('image/webp')
+  //         2x, url('../images/home/showcase.webp') type('image/webp') 1x, url('../images/home/showcase@2x.jpg')
+  //         2x, url('../images/home/showcase.jpg') 1x);
+
+  // background-image: linear-gradient(
+  //     0deg,
+  //     rgba(0, 0, 0, 0.4),
+  //     rgba(0, 0, 0, 0.4)
+  //   ),
+  //   image-set(
+  //     url('../images/home/showcase@2x.webp') type('image/webp') 2x,
+  //     url('../images/home/showcase.webp') type('image/webp') 1x,
+  //     url('../images/home/showcase@2x.jpg') 2x,
+  //     url('../images/home/showcase.jpg') 1x
+  //   );
+
+  @include tablet {
+    height: 1024px;
+  }
+
+  @include desktop {
+    height: 768px;
+  }
+}
+
+.home__content-wrap {
+  height: inherit;
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding-top: 28px;
+  }
+
+  @include desktop {
+    padding-top: 32px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.header--scroll {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0.6;
+  position: fixed;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @include font(400, 28px, 38px, none);
+  cursor: pointer;
+  transition: all $trans-time $cubic;
+  span {
+    color: getColor('green');
+    pointer-events: none;
+  }
+
+  p {
+    color: getColor('white');
+    pointer-events: none;
+  }
+
+  @include tablet {
+    gap: 4px;
+    @include font(400, 35px, 48px, none);
+  }
+}
+
+.header__logo:hover,
+.header__logo:focus {
+  filter: brightness(130%);
+  transform: scale(1.09);
+}
+
+.header__logo .icon-logo {
+  width: 40px;
+  height: 30px;
+  pointer-events: none;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: getColor('white');
+  @include font(400, 16px, 22px, none);
+
+  @include tablet {
+    gap: 20px;
+    @include font(400, 18px, 24px, none);
+  }
+
+  @include desktop {
+    gap: 40px;
+  }
+}
+
+.home__hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  flex: 1 1 auto;
+  text-align: center;
+  color: getColor('white');
+  h1 {
+    @include font(600, 40px, 54px, none);
+  }
+
+  p {
+    @include font(400, 26px, 32px, none);
+  }
+
+  @include tablet {
+    br {
+      display: none;
+    }
+
+    h1 {
+      @include font(600, 55px, 75px, none);
+    }
+
+    p {
+      @include font(400, 40px, 48px, none);
+    }
+  }
+
+  @include desktop {
+    p {
+      @include font(400, 40px, 54px, none);
+    }
+  }
+}
+
+.home__btn {
+  @extend .btn;
+  gap: 8px;
+  margin-top: 8px;
+  background-color: getColor('green');
+  transition: all $trans-time $cubic;
+}
+
+.home__btn:hover,
+.home__btn:focus {
+  filter: brightness(85%);
+}
+
+.arrow-right {
+  width: 7.2px;
+  height: 11.2px;
+  fill: getColor('white');
+  align-self: center;
+}

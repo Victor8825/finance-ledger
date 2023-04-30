@@ -1,0 +1,26 @@
+// fonts
+$primaryFont: 'Open Sans', sans-serif;
+
+//container
+$minWidthContainer: 320px;
+$tabletWidthContainer: 768px;
+$maxWidthContainer: 1360px;
+
+//colors
+$colors: (
+  'black': #333333,
+  'white': #ffffff,
+  'blue': #0284d0,
+  'green': #28a745,
+  'light-green': #2ebf4f,
+  'grey': #808080,
+  'grey-background': #f4f4f4,
+  'red': #eb5757,
+);
+
+$cubic: linear;
+$trans-time: 300ms;
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}

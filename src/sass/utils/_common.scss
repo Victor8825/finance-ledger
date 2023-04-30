@@ -1,0 +1,119 @@
+.container {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: $minWidthContainer;
+
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include desktop {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+.btn {
+  padding: 16px 32px;
+  font-family: inherit;
+  @include font(400, 16px, 22px, none);
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  border: transparent;
+  outline: transparent;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include tablet {
+    @include font(400, 18px, 24px, none);
+  }
+}
+
+.decorative-link {
+  // text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    background-color: getColor('green');
+    bottom: 0;
+    // left: 0;
+    left: 50%;
+    width: 0;
+    transition: all $trans-time;
+  }
+
+  &:hover::after {
+    left: 0;
+    width: 100%;
+  }
+}
+
+h2 {
+  @include font(400, 32px, 44px, none);
+
+  @include tablet {
+    @include font(400, 40px, 54px, none);
+  }
+}
+
+.socials-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  svg {
+    fill: getColor('white');
+    transition: all $trans-time $cubic;
+  }
+
+  svg:hover {
+    opacity: 0.5;
+  }
+}
+
+.input {
+  padding: 16px 8px;
+  border-radius: 5px;
+  border: none;
+  color: getColor('grey');
+  @include font(400, 16px, 24px, none);
+
+  @include tablet {
+    @include font(400, 18px, 24px, none);
+  }
+}
+
+.input--error {
+  border: 1px solid getColor('red');
+}
+
+.input--success {
+  border: 1px solid getColor('green');
+}
+
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  overflow: hidden;
+}

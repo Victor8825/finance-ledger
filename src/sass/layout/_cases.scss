@@ -1,0 +1,63 @@
+.cases__text-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  h2 {
+    margin-top: -8px;
+  }
+
+  p {
+    @include font(400, 18px, 24px, none);
+  }
+
+  @include tablet {
+    br {
+      display: none;
+    }
+  }
+}
+
+.cases {
+  padding-top: 56px;
+  padding-bottom: 40px;
+
+  @include tablet {
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  @include desktop {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.cases__images {
+  display: grid;
+  gap: 8px;
+
+  a {
+    transition: all $trans-time $cubic;
+  }
+
+  @include tablet {
+    gap: 18px;
+    // grid-template-columns: repeat(auto-fill, minmax(223px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include desktop {
+    gap: 24px;
+    // grid-template-columns: repeat(auto-fill, minmax(421px, 1fr));
+  }
+}
+
+.cases__images a:hover,
+.cases__images a:focus {
+  opacity: 0.8;
+}
