@@ -1,2 +1,16 @@
-@import './common';
-@import './example';
+@import './utils/_modern-normalize';
+@import './utils/vars';
+@import './utils/mixins';
+@import './utils/common';
+@import './utils/reset';
+
+@import './layout/modal';
+@import './layout/home';
+@import './layout/about';
+@import './layout/cases';
+@import './layout/blog';
+@import './layout/team';
+@import './layout/contact';
+@import './layout/footer';
+
+@import '~node_modules/lightbox2/dist/css/lightbox.min.css';
