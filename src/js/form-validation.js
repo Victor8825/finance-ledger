@@ -29,11 +29,11 @@ function handleSubmit(event) {
   }
 
   if (name.value.length >= 1 && email.value.length >= 1) {
-    showModalWindow();
-    event.currentTarget.reset();
+    // showModalWindow();
+    event.currentTarget.submit();
   }
 
-  // name.value.length <= 2
+  // name.value.length <= 2s
   //   ? name.classList.add('input--error')
   //   : name.classList.add('input--success');
 
