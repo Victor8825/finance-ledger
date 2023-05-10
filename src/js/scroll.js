@@ -1,6 +1,11 @@
 const headerRef = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
+  const headerHeight = headerRef.offsetHeight;
+  document.documentElement.style.setProperty(
+    '--scroll-padding',
+    headerHeight - 1 + 'px'
+  );
   if (document.body.clientWidth >= 768) {
     if (window.scrollY > 120) {
       // console.log('show header opacity');
